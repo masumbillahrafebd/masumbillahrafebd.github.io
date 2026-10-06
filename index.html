@@ -6,41 +6,125 @@
     <title>Masum Billah Rafe</title>
     <link rel="icon" type="image/x-icon" href="asec/img/logo.png">
 
-    <!-- Google font -->
-
-    <!-- font-family: "Exo 2", sans-serif; -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!-- font-family: "Montserrat", sans-serif; -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!-- CSS -->
-     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap-grid.css" integrity="sha512-nIykAn2cWE7iACgVi+thu4am6DGj+0WNXEa8o40WXBOnovP6WuBrIvrjwfxsqMjddjRbgyQqaRt92uQLV60VYw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap-grid.css" integrity="sha512-nIykAn2cWE7iACgVi+thu4am6DGj+0WNXEa8o40WXBOnovP6WuBrIvrjwfxsqMjddjRbgyQqaRt92uQLV60VYw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script>
+   
+<!-- ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+<!-- SplitText -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <img src="asec/img/logo.png" alt="">
-            <p>MENU</p>
-        </div>
-    </header>
+    <header class="main-tool-bar">
+        <img class="logo" src="asec/img/logo.png" alt="">
+        <button class="toggle" id="toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span class="label">
+                <i id="l1">Menu</i>
+               <i id="l2">Open</i>
+            </span>
+            <span class="btn">
+                <span class="bars"></span>
+                <span class="x"></span>
+            </span>
+        </button>
+
+  </header>
+
+
+  <!-- ---------- Wave Overlay ---------- -->
+
+  <svg id="wave" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path id="wp" d="M0 100V100L100 100Z"></path>
+  </svg>
+
+  <!-- ---------- Navigation Menu ---------- -->
+   <!-- When pop-up open -->
+
+  <nav class="menu" id="menu">
+
+    <h5 class="navlabel" data-in style="--i:1">
+      Navigation Menu
+    </h5>
+
+    <!-- Left Side Content -->
+
+    <div class="left">
+
+      <div class="connect" data-in style="--i:2">
+        <h6>#Connect</h6>
+        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
+        <a href="#">Behance</a>
+
+      </div>
+
+      <!-- Contact Details -->
+
+      <div class="cta" data-in style="--i:4">
+        <a class="mail" href="#">
+          <small>
+            Do you want to start your project now?
+          </small>
+          <span class="big">
+            hello@evne.agency
+          </span>
+        </a>
+
+        <a class="tel" href="#">
+          <span class="big">
+            <b>+</b>61 980 752 3789
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Side Navigation -->
+
+    <div class="right" id="right">
+      <div class="list" id="list"></div>
+    </div>
+
+    <!-- Scroll Indicator -->
+
+    <div class="track" data-in style="--i:3" >
+      <div class="thumb" id="thumb"></div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
     
     <section class="banner  ">
         <img class="overlay" src="asec/img/background.webp" alt="">
         <div class="container">
-            <h1>I'm Masum Billah Rafe</h1>
-            <h2>Design. Develop. Deliver. Grow.</h2>
+            <h1 class="gsap-test">I'm Masum Billah Rafe</h1>
+            <h2 class="main-heading-text">Design. Develop. Deliver. Grow.</h2>
             <div class="banner-image-box">
-                <img class="main-image" src="asec/img/Masum Billah Rafe.png" alt="">
+                <img src="asec/img/Masum Billah Rafe.png" alt="Mountain landscape">
+
+                <div class="shutter shutter-left"></div>
+                <div class="shutter shutter-right"></div>
             </div>
             <div class="excellence-box">
                 <p class="number">03</p>
@@ -72,8 +156,155 @@
                     <p class="counter-text">Success Rate</p>
                 </div>
             </div>
+
+            <div class="work-with">
+                <p>Worked With, Grown With</p>
+                <a href="https://techcilo.com/" target="_blank" rel="noopener noreferrer"><img class="company-logo" src="asec/img/techcilo-white-1.webp" alt="Techcilo"></a>
+                <a href="https://bdcalling.com/" target="_blank" rel="noopener noreferrer"><img class="company-logo" src="asec/img/bdC.png" alt="BD Calling"></a>
+                <a href="https://europeanit-inst.com/" target="_blank" rel="noopener noreferrer"><img class="company-logo" src="asec/img/EUIT.png" alt="EUIT"></a>
+            </div>
+
+          
         </div>
+
+
+       
+          <!-- <div class="experience-box">
+                <div class="black-box">
+                    <img class="logo-icon" src="asec/img/wp.webp" alt="">
+                    <p class="platform-name">WordPress</p>
+                    <p class="platform-short-description">I build WordPress websites that look clean, load fast, and match your brand, focusing on usability, flexibility, and long-term reliability.</p>
+                </div>
+
+                <div class="black-box">
+                    <img class="logo-icon" src="asec/img/code.webp" alt="">
+                    <p class="platform-name">Front-end</p>
+                    <p class="platform-short-description">I build front-end interfaces with clean code, fast performance, responsive layouts, and thoughtful details that make every interaction feel smooth.</p>
+                </div>
+
+                <div class="black-box">
+                    <img class="logo-icon" src="asec/img/webflow.webp" alt="">
+                    <p class="platform-name">Webflow</p>
+                    <p class="platform-short-description">I design Webflow websites with clean structure, smooth interactions, responsive layouts, and visual details crafted to express your brand clearly.</p>
+                </div>
+
+                <div class="black-box">
+                    <img class="logo-icon" src="asec/img/wix.webp" alt="">
+                    <p class="platform-name">Wix</p>
+                    <p class="platform-short-description">I create Wix websites that feel modern and easy to use, with thoughtful layouts, smooth structure, and features designed carefully.</p>
+                </div>
+            </div> -->
+
+
+
+
+
+
+             <!-- It's for scrolling -->
+
+
+            <div class="topbar">
+    <!-- <span class="brand">Made for motion</span> -->
+    <!-- <nav class="nav" aria-label="Demo controls"> -->
+      <!-- <span class="tag">Scroll-driven • HTML / CSS / JS</span> -->
+      <button id="replay" type="button"></button>
+    <!-- </nav> -->
+  </div>
+
+  <main>
+    <section class="scroll-scene" id="effect" aria-label="Scroll to reveal the headline and four feature cards">
+      <div class="stage">
+        <h1 class="headline" aria-label="What I Build With & How I Bring Ideas to Life">
+          <span class="line" data-text="What I Build With &" aria-hidden="true"></span>
+          <span class="line" data-text="How I Bring Ideas to Life" aria-hidden="true"></span>
+        </h1>
+
+        <div class="cards">
+          <article class="card">
+            <div class="black-box">
+                    <!-- <img class="logo-icon" src="asec/img/wp.webp" alt=""> -->
+                    <p class="platform-name">WordPress</p>
+                    <p class="platform-short-description">I build WordPress websites that look clean, load fast, and match your brand, focusing on usability, flexibility, and long-term reliability.</p>
+                </div>
+          </article>
+
+          <article class="card">
+            <div class="black-box">
+                    <!-- <img class="logo-icon" src="asec/img/code.webp" alt=""> -->
+                    <p class="platform-name">Front-end</p>
+                    <p class="platform-short-description">I build front-end interfaces with clean code, fast performance, responsive layouts, and thoughtful details that make every interaction feel smooth.</p>
+                </div>
+          </article>
+
+          <article class="card">
+            <div class="black-box">
+                    <!-- <img class="logo-icon" src="asec/img/webflow.webp" alt=""> -->
+                    <p class="platform-name">Webflow</p>
+                    <p class="platform-short-description">I design Webflow websites with clean structure, smooth interactions, responsive layouts, and visual details crafted to express your brand clearly.</p>
+                </div>
+          </article>
+
+          <article class="card">
+            <div class="black-box">
+                    <!-- <img class="logo-icon" src="asec/img/wix.webp" alt=""> -->
+                    <p class="platform-name">Wix</p>
+                    <p class="platform-short-description">I create Wix websites that feel modern and easy to use, with thoughtful layouts, smooth structure, and features designed carefully.</p>
+                </div>
+          </article>
+        </div>
+
+        <span class="scroll-hint"></span>
+      </div>
     </section>
+
+    <!-- <section class="outro">
+      <h2>
+        hi<strong>smart features</strong> that<br />
+        <strong>speed up</strong> your workflow
+      </h2>
+
+      <div class="bottom">
+        <span>Text reveal → scatter → card fan</span>
+        <a href="#effect">Back to the effect ↑</a>
+      </div>
+    </section> -->
+  </main>
+
+  <div class="progress" aria-hidden="true"></div>
+
+    </section>
+
+
+
+
+
+
+    <!-- for scroll to color change -->
+     <main class="Projects-main-div">
+      <section class="projects" id="projects" aria-labelledby="title">
+        <img class="overlay" src="asec/img/background.webp" alt="">
+        <div class="section-heading">
+          <h1 id="title">Projects I’ve Built</h1>
+          <p>
+            A glimpse into the websites I’ve designed and developed tailored for real clients,
+            real needs, and real impact.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <section class="personal-statement">
+      <div class="highlight-box">
+        <h2 class="scroll-highlight" >I don't just build websites. I build digital experiences that help businesses grow.</h2>
+      </div>
+      <img class="leayerimage" src="asec/img/webimage.png" alt="">
+    </section>
+    
+    <script src="asec/js/gsap.js"></script>
+    <script src="asec/js/header.js"></script>
+    <script src="asec/js/animetion.js"></script>
+     
+    <!--  -->
     
 </body>
 </html>
