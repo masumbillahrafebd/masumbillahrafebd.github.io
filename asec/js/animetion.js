@@ -290,3 +290,5 @@ Image data is embedded below in the HTML, extracted from the supplied recording.
   progress = target;
   render();
 })();
+
+
